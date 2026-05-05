@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NutriSight Pro – Project Presentation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #1a1a2e; line-height: 1.7; background: #fff; }
+  .page { page-break-after: always; min-height: 100vh; padding: 60px 80px; display: flex; flex-direction: column; }
+  .page:last-child { page-break-after: avoid; }
+  h1 { font-family: 'Outfit', sans-serif; font-size: 2.8rem; font-weight: 900; }
+  h2 { font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800; color: #059669; margin-bottom: 24px; border-bottom: 3px solid #059669; padding-bottom: 8px; }
+  h3 { font-size: 1.15rem; font-weight: 700; color: #1a1a2e; margin: 16px 0 8px; }
+  p, li { font-size: 0.95rem; }
+  ul { padding-left: 24px; }
+  li { margin-bottom: 6px; }
+  .subtitle { font-size: 1.2rem; color: #6b7280; font-weight: 500; margin-top: 8px; }
+  .tag { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 3px; }
+  .tag-green { background: #d1fae5; color: #065f46; }
+  .tag-blue { background: #dbeafe; color: #1e40af; }
+  .tag-purple { background: #ede9fe; color: #5b21b6; }
+  .tag-amber { background: #fef3c7; color: #92400e; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+  th { background: #059669; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; }
+  td { padding: 9px 14px; border-bottom: 1px solid #e5e7eb; }
+  tr:nth-child(even) { background: #f9fafb; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; background: #f9fafb; }
+  .card h3 { margin-top: 0; }
+  .highlight { background: linear-gradient(135deg, #ecfdf5, #f0fdf4); border-left: 4px solid #059669; padding: 16px 20px; border-radius: 8px; margin: 12px 0; }
+  .center { text-align: center; }
+  .flex-center { display: flex; align-items: center; justify-content: center; flex: 1; }
+  .slide-num { position: absolute; bottom: 30px; right: 40px; font-size: 0.8rem; color: #9ca3af; font-weight: 600; }
+  .logo-icon { font-size: 4rem; margin-bottom: 16px; }
+  .speak { color: #6b7280; font-style: italic; font-size: 0.85rem; margin-top: 6px; border-left: 3px solid #d1d5db; padding-left: 12px; }
+  @media print {
+    .page { min-height: 100vh; padding: 40px 50px; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="page" style="position:relative; justify-content:center; align-items:center; text-align:center; background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 50%, #faf5ff 100%);">
+  <div class="logo-icon">🥗</div>
+  <h1 style="font-size:3.2rem; background: linear-gradient(135deg, #059669, #0d9488); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NutriSight Pro</h1>
+  <p class="subtitle" style="font-size:1.4rem; margin-top:12px;">Smart Diet &amp; Nutrition Analyzer</p>
+  <p style="margin-top:30px; font-size:1rem; color:#6b7280;">AI-Powered Food Recognition • Real-Time Nutrition Analysis • Personalized Meal Plans</p>
+  <div style="margin-top:40px;">
+    <p style="font-size:1.05rem; font-weight:600;">Presented by: S Gang</p>
+    <p style="font-size:0.9rem; color:#9ca3af; margin-top:4px;">Final Year Project • 2025</p>
+  </div>
+  <span class="slide-num">1</span>
+</div>
+
+<!-- SLIDE 2: PROBLEM STATEMENT -->
+<div class="page" style="position:relative;">
+  <h2>📌 Problem Statement</h2>
+  <h3>The Challenge</h3>
+  <ul>
+    <li><strong>Rising health issues:</strong> India has 101M+ diabetics and 315M+ with hypertension, largely linked to poor dietary habits.</li>
+    <li><strong>No easy calorie tracking:</strong> People eat without knowing nutritional value — manual calorie counting is tedious and inaccurate.</li>
+    <li><strong>Generic diet plans:</strong> Existing apps provide one-size-fits-all meal plans, not personalized to Indian food or individual goals.</li>
+    <li><strong>Portion estimation gap:</strong> No consumer tool accurately estimates food quantity from a photo — plate/bowl volume is critical but ignored.</li>
+  </ul>
+
+  <h3>Our Solution</h3>
+  <div class="highlight">
+    <strong>NutriSight Pro</strong> uses AI-powered image recognition to instantly analyze food photos — detecting each item, estimating portion sizes using plate/bowl volume analysis, calculating per-item and total nutrition, and generating personalized meal plans.
+  </div>
+
+  <h3>Key Objectives</h3>
+  <ul>
+    <li>Build an AI system that identifies multiple food items in a single image</li>
+    <li>Estimate portion sizes using container volume analysis (plate diameter, depth, fill %)</li>
+    <li>Provide per-item AND total nutrition breakdown (calories, protein, carbs, fat, fiber)</li>
+    <li>Generate personalized meal plans based on user goals and diet preferences</li>
+    <li>Track daily nutrition intake with visual analytics and progress tracking</li>
+  </ul>
+  <span class="slide-num">2</span>
+</div>
+
+<!-- SLIDE 3: TECH STACK -->
+<div class="page" style="position:relative;">
+  <h2>🧱 Technology Stack</h2>
+  <table>
+    <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+    <tr><td><strong>Frontend</strong></td><td>React 18 + TypeScript</td><td>Type-safe, component-based UI</td></tr>
+    <tr><td><strong>Build Tool</strong></td><td>Vite</td><td>Fast HMR, instant dev server</td></tr>
+    <tr><td><strong>Styling</strong></td><td>Tailwind CSS v4</td><td>Utility-first responsive design</td></tr>
+    <tr><td><strong>State Mgmt</strong></td><td>TanStack React Query</td><td>Server-state caching &amp; sync</td></tr>
+    <tr><td><strong>Charts</strong></td><td>Recharts</td><td>Interactive nutrition visualizations</td></tr>
+    <tr><td><strong>Backend</strong></td><td>Supabase (PostgreSQL)</td><td>Auth, database, real-time APIs</td></tr>
+    <tr><td><strong>AI Engine</strong></td><td>Google Gemini 2.5 Flash</td><td>Vision AI for food recognition</td></tr>
+    <tr><td><strong>Auth</strong></td><td>Supabase Auth (JWT)</td><td>Secure email/password authentication</td></tr>
+    <tr><td><strong>Routing</strong></td><td>React Router v6</td><td>Client-side SPA navigation</td></tr>
+    <tr><td><strong>Icons</strong></td><td>Lucide React</td><td>Consistent icon system</td></tr>
+  </table>
+
+  <h3>Why This Stack?</h3>
+  <div class="grid2">
+    <div class="card">
+      <h3>🚀 Performance</h3>
+      <p>Vite provides sub-second HMR. React Query caches AI results to avoid redundant API calls. The frontend is a static SPA — loads instantly.</p>
+    </div>
+    <div class="card">
+      <h3>🔒 Security</h3>
+      <p>Supabase provides Row Level Security (RLS) — users can only access their own data. JWT-based auth with automatic token refresh.</p>
+    </div>
+  </div>
+  <span class="slide-num">3</span>
+</div>
+
+<!-- SLIDE 4: SYSTEM ARCHITECTURE -->
+<div class="page" style="position:relative;">
+  <h2>🏗️ System Architecture</h2>
+  <div class="highlight">
+    <strong>Architecture Pattern:</strong> Client-side SPA + BaaS (Backend as a Service) + AI API
+  </div>
+
+  <h3>Data Flow</h3>
+  <pre style="background:#1a1a2e; color:#a5f3fc; padding:20px; border-radius:12px; font-size:0.85rem; line-height:1.8; overflow-x:auto;">
+  ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
+  │   Browser   │────▶│  React SPA   │────▶│  Supabase Auth  │
+  │  (User)     │     │  (Vite)      │     │  (JWT Tokens)   │
+  └─────────────┘     └──────┬───────┘     └─────────────────┘
+                             │
+                    ┌────────┼────────┐
+                    ▼                 ▼
+          ┌─────────────┐   ┌──────────────────┐
+          │ Gemini AI   │   │ Supabase DB      │
+          │ Vision API  │   │ (PostgreSQL)     │
+          │             │   │                  │
+          │ • Food      │   │ • profiles       │
+          │   Detection │   │ • meals          │
+          │ • Volume    │   │ • goals          │
+          │   Estimation│   │ • meal_plans     │
+          │ • Nutrition │   │ • weight_logs    │
+          │   Calc      │   │                  │
+          └─────────────┘   └──────────────────┘
+  </pre>
+
+  <h3>Key Design Decisions</h3>
+  <ul>
+    <li><strong>Client-side AI calls:</strong> Gemini API is called directly from the browser for fastest response time</li>
+    <li><strong>Model fallback system:</strong> If one Gemini model is rate-limited, the app automatically tries 4 different models</li>
+    <li><strong>Modular hooks:</strong> Business logic separated into custom React hooks (useMeals, useAnalytics, useDailyGoals)</li>
+    <li><strong>CSS custom properties:</strong> Theme system supports light/dark mode via CSS variables</li>
+  </ul>
+  <span class="slide-num">4</span>
+</div>
+
+<!-- SLIDE 5: CORE FEATURE 1 — AI FOOD ANALYSIS -->
+<div class="page" style="position:relative;">
+  <h2>🧠 Core Feature 1: AI Food Analysis</h2>
+
+  <h3>How It Works</h3>
+  <ol style="padding-left:24px;">
+    <li><strong>Image Upload:</strong> User uploads or captures a food photo (drag-and-drop supported)</li>
+    <li><strong>Base64 Encoding:</strong> Image is converted to base64 and sent to Gemini Vision API</li>
+    <li><strong>AI Processing:</strong> Gemini analyzes the image using a carefully engineered prompt</li>
+    <li><strong>Structured Response:</strong> AI returns JSON with per-item nutrition, volume estimation, and health score</li>
+    <li><strong>Display & Save:</strong> Results are rendered with interactive cards and can be logged to the database</li>
+  </ol>
+
+  <h3>Multi-Food Item Detection</h3>
+  <div class="highlight">
+    When an image contains multiple food items (e.g., a plate with rice, dal, and salad), the AI detects and analyzes <strong>each item individually</strong> — providing separate nutrition data for each, plus the combined total.
+  </div>
+
+  <h3>Example AI Output</h3>
+  <pre style="background:#1a1a2e; color:#a5f3fc; padding:16px; border-radius:10px; font-size:0.8rem; line-height:1.6;">
+  Image: Plate with rice, chicken curry, and salad
+  ┌─────────────────────────────────────────────┐
+  │ Item 1: Steamed Rice    │ 280g │ 364 kcal   │
+  │   Protein: 6.7g  Carbs: 79g  Fat: 0.6g     │
+  ├─────────────────────────────────────────────┤
+  │ Item 2: Chicken Curry   │ 200g │ 310 kcal   │
+  │   Protein: 28g   Carbs: 8g   Fat: 18g      │
+  ├─────────────────────────────────────────────┤
+  │ Item 3: Green Salad     │ 100g │  25 kcal   │
+  │   Protein: 1.5g  Carbs: 4g   Fat: 0.3g     │
+  ├─────────────────────────────────────────────┤
+  │ TOTAL PLATE             │ 580g │ 699 kcal   │
+  └─────────────────────────────────────────────┘
+  </pre>
+  <span class="slide-num">5</span>
+</div>
+
+<!-- SLIDE 6: VOLUME ESTIMATION -->
+<div class="page" style="position:relative;">
+  <h2>📐 Core Feature 2: Volume &amp; Portion Estimation</h2>
+
+  <div class="highlight">
+    <strong>Assessor's Key Question:</strong> "How are you estimating the volume of the plate or bowl? That matters the most for nutrition estimation."
+  </div>
+
+  <h3>Our Approach: Visual Reference-Based Estimation</h3>
+  <p>The AI uses a multi-step approach to estimate food portions:</p>
+
+  <div class="grid2" style="margin-top:16px;">
+    <div class="card">
+      <h3>Step 1: Container Detection</h3>
+      <ul>
+        <li>Identify container type (plate, bowl, cup, tray)</li>
+        <li>Standard plate ≈ 26cm diameter</li>
+        <li>Side plate ≈ 20cm</li>
+        <li>Soup bowl ≈ 16cm, 8cm depth</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Step 2: Reference Objects</h3>
+      <ul>
+        <li>Fork/spoon length ≈ 19cm</li>
+        <li>Hand width ≈ 8-10cm</li>
+        <li>Standard packaging sizes</li>
+        <li>Table edge proportions</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Step 3: Volume Calculation</h3>
+      <ul>
+        <li>Estimate food height/depth on plate</li>
+        <li>Calculate fill percentage (0-100%)</li>
+        <li>Use food density to convert volume → weight</li>
+        <li>Rice density ≈ 0.9g/cm³, curry ≈ 1.0g/cm³</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Step 4: Weight → Nutrition</h3>
+      <ul>
+        <li>Map estimated grams to per-100g nutrition data</li>
+        <li>Apply cooking method adjustments</li>
+        <li>Cross-reference with standard food databases</li>
+        <li>Report confidence score (0-100%)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>UI Display</h3>
+  <p>The app shows a dedicated <strong>"Portion Estimation Method"</strong> card that explains:</p>
+  <ul>
+    <li><strong>Methodology:</strong> Human-readable explanation of how the AI estimated portions</li>
+    <li><strong>Container type &amp; dimensions:</strong> Plate diameter, bowl depth</li>
+    <li><strong>Fill percentage:</strong> How full the container is</li>
+    <li><strong>Reference objects used:</strong> What the AI used for scale calibration</li>
+  </ul>
+  <span class="slide-num">6</span>
+</div>
+
+<!-- SLIDE 7: HEALTH SCORE & MORE FEATURES -->
+<div class="page" style="position:relative;">
+  <h2>⭐ More Core Features</h2>
+
+  <h3>Health Score System (0-100)</h3>
+  <table>
+    <tr><th>Score Range</th><th>Label</th><th>Color</th><th>Criteria</th></tr>
+    <tr><td>80-100</td><td>Excellent</td><td style="color:#059669;">🟢 Green</td><td>Balanced macros, natural ingredients, high fiber</td></tr>
+    <tr><td>60-79</td><td>Good</td><td style="color:#059669;">🟢 Green</td><td>Mostly balanced, minor improvements needed</td></tr>
+    <tr><td>40-59</td><td>Average</td><td style="color:#f59e0b;">🟡 Amber</td><td>High in one macro, moderate processing</td></tr>
+    <tr><td>0-39</td><td>Poor</td><td style="color:#ef4444;">🔴 Red</td><td>Highly processed, excess sugar/sodium</td></tr>
+  </table>
+
+  <h3>Dashboard &amp; Analytics</h3>
+  <ul>
+    <li><strong>Daily stats cards:</strong> Calories, protein, carbs, fat consumed today vs goals</li>
+    <li><strong>Weekly bar chart:</strong> 7-day calorie intake trend (Recharts)</li>
+    <li><strong>Macro pie chart:</strong> Today's protein/carbs/fat distribution</li>
+    <li><strong>Recent meals list:</strong> Quick view of logged meals with health scores</li>
+  </ul>
+
+  <h3>AI Meal Plan Generator</h3>
+  <ul>
+    <li>Generates multi-day plans (1-7 days) using Gemini AI</li>
+    <li>Configurable: goal (lose/maintain/gain), diet (veg/vegan/keto/paleo), calorie target</li>
+    <li>Each meal includes: name, description, full nutrition, recipe steps</li>
+    <li>Accordion-style day view with 4 meals/day (breakfast, lunch, dinner, snack)</li>
+  </ul>
+
+  <h3>Goal Tracking</h3>
+  <ul>
+    <li>Animated SVG calorie ring showing daily progress</li>
+    <li>Macro progress bars with color-coded indicators</li>
+    <li>Persistent daily goals stored in the database</li>
+  </ul>
+  <span class="slide-num">7</span>
+</div>
+
+<!-- SLIDE 8: DATABASE DESIGN -->
+<div class="page" style="position:relative;">
+  <h2>🗄️ Database Design</h2>
+
+  <h3>Entity Relationship</h3>
+  <table>
+    <tr><th>Table</th><th>Key Columns</th><th>Purpose</th></tr>
+    <tr><td><strong>profiles</strong></td><td>id (FK→auth.users), full_name, age, gender, height_cm, weight_kg, goal, diet_preference, daily_calorie_goal</td><td>User profile &amp; preferences</td></tr>
+    <tr><td><strong>meals</strong></td><td>id, user_id, food_name, nutrition (JSONB), health_score, ingredients (JSONB), meal_type, logged_at</td><td>Logged food entries with AI results</td></tr>
+    <tr><td><strong>goals</strong></td><td>id, user_id, date, calorie_goal, protein_goal, carbs_goal, fat_goal</td><td>Daily nutrition targets</td></tr>
+    <tr><td><strong>meal_plans</strong></td><td>id, user_id, title, goal, plan_data (JSONB)</td><td>AI-generated meal plans</td></tr>
+    <tr><td><strong>weight_logs</strong></td><td>id, user_id, weight_kg, logged_at</td><td>Weight tracking over time</td></tr>
+  </table>
+
+  <h3>Security: Row Level Security (RLS)</h3>
+  <div class="highlight">
+    Every table has RLS enabled. Users can <strong>only read, write, and delete their own data</strong>. This is enforced at the database level — even if the API is compromised, data isolation is guaranteed.
+  </div>
+  <pre style="background:#1a1a2e; color:#a5f3fc; padding:14px; border-radius:10px; font-size:0.82rem;">
+  -- Example RLS policy
+  CREATE POLICY "Users can view own meals"
+    ON public.meals FOR SELECT
+    USING (auth.uid() = user_id);
+  </pre>
+
+  <h3>Auto-Profile Creation Trigger</h3>
+  <p>When a user signs up, a PostgreSQL trigger automatically creates their profile row — no extra API call needed.</p>
+  <span class="slide-num">8</span>
+</div>
+
+<!-- SLIDE 9: UI/UX & MODULES -->
+<div class="page" style="position:relative;">
+  <h2>🎨 UI/UX Design &amp; Modules</h2>
+
+  <h3>Design Principles</h3>
+  <ul>
+    <li><strong>Glassmorphism:</strong> Frosted-glass sidebar with backdrop blur for a premium feel</li>
+    <li><strong>Dark/Light mode:</strong> Full theme support with CSS custom properties and smooth transitions</li>
+    <li><strong>Micro-animations:</strong> Fade-in, slide-up, scale-in transitions on all page loads</li>
+    <li><strong>Responsive grid:</strong> Adapts to desktop, tablet, and mobile screens</li>
+    <li><strong>Typography:</strong> Inter (body) + Outfit (headings) from Google Fonts</li>
+  </ul>
+
+  <h3>Application Modules</h3>
+  <table>
+    <tr><th>Module</th><th>Route</th><th>Description</th></tr>
+    <tr><td>🔐 Authentication</td><td>/login</td><td>Sign up &amp; sign in with email/password</td></tr>
+    <tr><td>📊 Dashboard</td><td>/dashboard</td><td>Daily stats, weekly charts, recent meals</td></tr>
+    <tr><td>🔍 Analyze</td><td>/analyze</td><td>Upload food image → AI analysis → nutrition cards</td></tr>
+    <tr><td>📜 History</td><td>/history</td><td>Search &amp; filter past meals with full data</td></tr>
+    <tr><td>🍽️ Meal Planner</td><td>/meal-planner</td><td>AI-generated personalized meal plans</td></tr>
+    <tr><td>🎯 Goals</td><td>/goals</td><td>Daily calorie/macro goal tracking</td></tr>
+    <tr><td>👤 Profile</td><td>/profile</td><td>Edit personal info, preferences, calorie target</td></tr>
+  </table>
+
+  <h3>Color Palette</h3>
+  <div style="display:flex; gap:8px; margin-top:8px; flex-wrap:wrap;">
+    <span class="tag tag-green">Primary: Emerald #059669</span>
+    <span class="tag tag-blue">Accent: Teal #0d9488</span>
+    <span class="tag" style="background:#fee2e2; color:#991b1b;">Danger: Red #ef4444</span>
+    <span class="tag tag-amber">Warning: Amber #f59e0b</span>
+    <span class="tag tag-purple">Info: Blue #3b82f6</span>
+  </div>
+  <span class="slide-num">9</span>
+</div>
+
+<!-- SLIDE 10: FUTURE SCOPE & CONCLUSION -->
+<div class="page" style="position:relative;">
+  <h2>🔮 Future Scope &amp; Conclusion</h2>
+
+  <h3>Future Enhancements</h3>
+  <div class="grid2">
+    <div class="card">
+      <h3>📱 Real-Time Camera</h3>
+      <p>Use WebCam API for live food detection — point camera at food and get instant nutrition overlay.</p>
+    </div>
+    <div class="card">
+      <h3>🎙️ Voice Logging</h3>
+      <p>Web Speech API for hands-free meal logging — "I had 2 rotis with dal for lunch."</p>
+    </div>
+    <div class="card">
+      <h3>📏 AR Volume Estimation</h3>
+      <p>Use phone depth sensors (LiDAR) for more accurate 3D volume estimation of food containers.</p>
+    </div>
+    <div class="card">
+      <h3>🤖 USDA Cross-Validation</h3>
+      <p>Cross-reference AI estimates with USDA food database for more accurate per-item nutrition values.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px;">Conclusion</h3>
+  <div class="highlight">
+    <strong>NutriSight Pro</strong> demonstrates a practical application of AI vision technology for everyday health. By combining <strong>Gemini AI</strong> for food recognition, <strong>volume-based portion estimation</strong> for accuracy, and <strong>per-item nutrition breakdown</strong> for transparency, we've built a tool that makes nutrition tracking effortless and informative.
+    <br><br>
+    The application is production-ready with secure authentication, a scalable PostgreSQL backend, and a modern responsive UI — suitable for real-world deployment.
+  </div>
+
+  <div class="center" style="margin-top:40px;">
+    <p style="font-size:2rem;">🙏</p>
+    <h3 style="font-size:1.5rem; color:#059669;">Thank You!</h3>
+    <p style="color:#6b7280; margin-top:8px;">Questions?</p>
+    <p style="margin-top:20px; font-size:0.85rem; color:#9ca3af;">Built by S Gang • NutriSight Pro © 2025</p>
+  </div>
+  <span class="slide-num">10</span>
+</div>
+
+</body>
+</html>
